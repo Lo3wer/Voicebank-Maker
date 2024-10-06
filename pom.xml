@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hackathon.voicebank</groupId>
-	<artifactId>voicebank-maker-backend</artifactId>
+	<artifactId>voicebank-maker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>voicebank-maker</name>
 	<description>Demo project for Spring Boot</description>
