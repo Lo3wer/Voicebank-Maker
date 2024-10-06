@@ -44,10 +44,14 @@ function ReactRecorder() {
             <div className={"p-1"}>
                 {!voice ?
                     <button onClick={startHandle}
-                            className={"bg-gray-600 px-5 py-2.5 text-center rounded-full"}>Start</button>
+                            className={"text-center rounded-full"}>
+                            <img src={"icons/play.png"} alt={"play"} width={"50"} height={"50"}/>
+                            </button>
                     :
                     <button onClick={stopHandle}
-                            className={"bg-gray-600 px-5 py-2.5 text-center rounded-full"}>Stop</button>
+                            className={"text-center rounded-full"}>
+                        <img src={"icons/pause.png"} alt={"pause"} width={"50"} height={"50"}/>
+                    </button>
                 }
 
             </div>

@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home.js";
+import Navigation from "./pages/Navigation.js";
 import Test from "./pages/RecordingMenu.js";
 import Download from "./pages/Download.js";
 
