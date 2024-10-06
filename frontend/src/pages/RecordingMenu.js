@@ -1,4 +1,5 @@
 import logo from '../logo.svg';
+import ReactRecorder from "../components/ReactRecorder";
 
 function recordingMenu() {
 
@@ -7,6 +8,9 @@ function recordingMenu() {
                 <h1 className="">
                     Record
                 </h1>
+                <div className={"h-[100vh] pt-10"}>
+                    <ReactRecorder/>
+                </div>
         </div>
     )
 }
