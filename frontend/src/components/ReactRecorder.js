@@ -25,16 +25,18 @@ function ReactRecorder() {
 
 
     return (
-        <div className={'max-w-sm border py-4 px-6t mx-auto bg-blue-200'}>
-            <h4 className={"text-[18px]"}>React Recorder</h4>
+        <div className={'flex flex-col max-w-sm border py-4 px-6t mx-auto bg-blue-200 items-center p-2'}>
+            <h4 className={"text-[18px]"}>Sound: </h4>
 
             <ReactMic className={"w-full mt-4 mb-3"}
                       record={voice}
                       onStop={onStop}
+                      mimeType={"audio/wav"}
+                      sampleRate={48000}
             />
 
             <div className={""}>
-                {audioLink ? <button onClick={clearHandle} className={""}>Clear</button>  : ''}
+                {audioLink? <button onClick={clearHandle} className={""}>Clear</button>  : ''}
             </div>
             <div className={""}>
             {!voice ?
