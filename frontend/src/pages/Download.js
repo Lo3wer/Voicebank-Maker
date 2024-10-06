@@ -62,7 +62,8 @@ function Download() {
         const wavs9 = zip.folder("VV");
         */
 
-        wavs0.file("oto.ini", "");
+        wavs0.file("oto.ini",
+            "file_0=-gu\nfile_1=ud-\nfile_2=af\nfile_3=tr\nfile_4=-no\nfile_5=un-\nfile_6=-ju\nfile_7=-je\nfile_8=ez\n");
         /*
         wavs1.file("oto.ini", "");
         wavs2.file("oto.ini", "");

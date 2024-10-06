@@ -71,7 +71,6 @@ function ReactRecorder() {
                     :
                     <audio controls src={""} className={"mt-6 disabled:true"}/>}
             </div>
-
             <div className={"p-3 space-x-1"}>
                 {audioLink ? <button onClick={clearHandle}
                                      className={"bg-red-600 px-5 py-2.5 text-center rounded-full"}>Clear</button> :
@@ -82,8 +81,11 @@ function ReactRecorder() {
                     <button onClick={nextHandle}
                             className={"bg-green-300 px-5 py-2.5 text-center rounded-full disabled:true"}>Next</button>}
             </div>
+        </div>
+    )
+};
 
-
+/*    // Testing code to see global list filling
             <ul className={"bg-gray-600"}>
                 {globalList.map((item, index) => (
                     <li key={index}>
@@ -92,8 +94,6 @@ function ReactRecorder() {
                     </li>
                 ))}
             </ul>
-        </div>
-    )
-};
+*/
 
 export default ReactRecorder
