@@ -11,7 +11,8 @@ function Download() {
     return (
         <div className="flex flex-col justify-center items-center h-screen w-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white p-8">
             <h1 className="text-center text-4xl font-extrabold mb-4 animate-fade-in"></h1>
-            <p className="text-lg mb-10 text-center max-w-lg text-indigo-100">
+            <h1 className="text-5xl font-bold mb-6 text-white">Download Your Voice Bank</h1>
+            <p className="text-lg mb-10 text-center max-w-lg text-indigo-200">
                 Congrats on recording your very own voice bank!
             </p>
             <div className="flex items-center justify-center mb-10">
