@@ -1,46 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Layout from "./pages/Layout";
-import Test from "./pages/Test";
-import NoPage from "./pages/NoPage";
+import Home from "./pages/Home";
+import Download from "./pages/Download";
 import React from "react";
+import RecordingMenu from "./pages/RecordingMenu";
 function App() {
 
   return (
-      /*
-    <div>
-      <header>
-        <h1 className="p-5">
-          hello
-        </h1>
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/Test.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
-
-      <div className="flex h-screen">
-          <BrowserRouter className="flex">
+      <div>
+          <BrowserRouter>
               <Routes>
-                  <Route path="/" element={<Layout />}>
-                      <Route path="/app" element={<App />} />
-                      <Route path="/test" element={<Test />} />
-                      <Route path="/*" element={<NoPage />} />
+                  <Route path="/" element={<Home/>}>
+                      <Route path="/App" element={<App/>}/>
+                      <Route path="/recordingmenu" element={<RecordingMenu/>}/>
+                      <Route path="/download" element={<Download/>}/>
                   </Route>
               </Routes>
           </BrowserRouter>
+
+          <div className="flex flex-col justify-center align-middle items-center h-screen w-screen bg-white">
+              <h1 className="">
+                  Voicebank Maker
+              </h1>
+          </div>
       </div>
   )
 }
