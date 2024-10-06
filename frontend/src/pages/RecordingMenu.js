@@ -6,7 +6,7 @@ function recordingMenu() {
     return (
         <div className="flex flex-col justify-center align-middle items-center h-screen w-screen bg-white bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white p-8">
                 <h1 className="text-4xl font-bold mb-6 text-white">
-                    Sounds to record:
+                    Sounds to Record:
                 </h1>
 
             <div className={"flex space-x-5"}>
@@ -47,6 +47,7 @@ function recordingMenu() {
 
                 <ReactRecorder/>
             </div>
+            <a href={"https://www.mediafire.com/file/xc60ff0f73hv9cb/CZloid+VCCV+2015.rar"} className={"p-2 text-blue-50 underline"}>Examples sounds for download.</a>
         </div>
     )
 }
