@@ -12,10 +12,12 @@ public class VoicebankDaoService {
 
     private static List<Voicebank> voicebanks = new ArrayList<>();
 
+    private static int count = 0;
+
     static {
-        voicebanks.add(new Voicebank(1, "recording 1", new File("rec1.wav")));
-        voicebanks.add(new Voicebank(2, "recording 2", new File("rec2.wav")));
-        voicebanks.add(new Voicebank(3, "recording 3", new File("rec3.wav")));
+        voicebanks.add(new Voicebank(++count, "recording 1", new File("rec1.wav")));
+        voicebanks.add(new Voicebank(++count, "recording 2", new File("rec2.wav")));
+        voicebanks.add(new Voicebank(++count, "recording 3", new File("rec3.wav")));
     }
 
     public List<Voicebank> getVoicebanks() {
@@ -25,5 +27,11 @@ public class VoicebankDaoService {
     public Voicebank getVoicebank(int id) {
         Predicate<? super Voicebank> predicate = voicebank -> voicebank.getId().equals(id);
         return voicebanks.stream().filter(predicate).findFirst().get();
+    }
+
+    public Voicebank save(Voicebank voicebank) {
+        voicebank.setId(++count);
+        voicebanks.add(voicebank);
+        return voicebank;
     }
 }

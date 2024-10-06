@@ -1,8 +1,6 @@
 package com.hackathon.voicebank.voicebank_maker.Voicebank;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,11 @@ public class VoicebankResource {
     @GetMapping("/voicebanks/{id}")
     public Voicebank getVoicebank(@PathVariable int id) {
         return service.getVoicebank(id);
+    }
+
+    //POST /voicebanks
+    @PostMapping("/voicebanks")
+    public void createVoicebank(@RequestBody Voicebank voicebank) {
+        service.save(voicebank);
     }
 }
