@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import {ReactMic} from 'react-mic';
+
+import { GlobalListContext } from '../GlobalListContext';
 
 function ReactRecorder() {
 
     const [voice, setVoice] = React.useState(false);
     const [audioLink, setAudioLink] = React.useState(false);
+
+    const {globalList, addToList, removeFromList} = useContext(GlobalListContext);
+
+    const handleAdd = (newItem) => {
+        addToList(newItem);
+    };
 
     const onStop = (blob) => {
         console.log(blob);
@@ -25,7 +33,10 @@ function ReactRecorder() {
 
     function nextHandle() {
         setVoice(false);
-        console.log(audioLink); // DO SOMETHIGN WITH THE AUDIO LINK
+        handleAdd(audioLink);
+        for (let i=0; i<globalList.size; i++) {
+            alert(""+globalList[i]); // DO SOMETHIGN WITH THE AUDIO LINK
+        }
         setAudioLink("");
     }
 
@@ -45,8 +56,8 @@ function ReactRecorder() {
                 {!voice ?
                     <button onClick={startHandle}
                             className={"text-center rounded-full"}>
-                            <img src={"icons/play.png"} alt={"play"} width={"50"} height={"50"}/>
-                            </button>
+                        <img src={"icons/play.png"} alt={"play"} width={"50"} height={"50"}/>
+                    </button>
                     :
                     <button onClick={stopHandle}
                             className={"text-center rounded-full"}>
@@ -71,6 +82,16 @@ function ReactRecorder() {
                     <button onClick={nextHandle}
                             className={"bg-green-300 px-5 py-2.5 text-center rounded-full disabled:true"}>Next</button>}
             </div>
+
+
+            <ul className={"bg-gray-600"}>
+                {globalList.map((item, index) => (
+                    <li key={index}>
+                        {item}
+                        <button onClick={() => removeFromList(index)}>Remove</button>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 };

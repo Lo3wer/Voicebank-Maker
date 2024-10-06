@@ -7,6 +7,7 @@ import React from "react";
 import RecordingMenu from "./pages/RecordingMenu";
 import img from "./images/note.png";
 import Home from "./pages/Home";
+
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
                   </Route>
               </Routes>
           </BrowserRouter>
+
 
       </div>
   )

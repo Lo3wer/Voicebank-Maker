@@ -9,7 +9,8 @@ import Navigation from "./pages/Navigation.js";
 import Test from "./pages/RecordingMenu.js";
 import Download from "./pages/Download.js";
 
-
+import { GlobalListProvider } from './GlobalListContext';
+import RecordingMenu from "./pages/RecordingMenu";
 
 
 
@@ -17,7 +18,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <App />
+      <GlobalListProvider>
+          <App />
+      </GlobalListProvider>
   </React.StrictMode>
 );
 
