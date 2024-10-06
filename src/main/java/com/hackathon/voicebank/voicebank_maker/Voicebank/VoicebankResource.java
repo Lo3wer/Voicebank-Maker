@@ -1,7 +1,10 @@
 package com.hackathon.voicebank.voicebank_maker.Voicebank;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -27,7 +30,12 @@ public class VoicebankResource {
 
     //POST /voicebanks
     @PostMapping("/voicebanks")
-    public void createVoicebank(@RequestBody Voicebank voicebank) {
-        service.save(voicebank);
+    public ResponseEntity<Voicebank> createVoicebank(@RequestBody Voicebank voicebank) {
+        Voicebank savedVoicebank = service.save(voicebank);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(savedVoicebank.getId())
+                    .toUri();
+        return ResponseEntity.created(location).build();
     }
 }
