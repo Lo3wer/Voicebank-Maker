@@ -4,13 +4,8 @@ import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navigation from "./pages/Navigation.js";
-import Test from "./pages/RecordingMenu.js";
-import Download from "./pages/Download.js";
-
 import { GlobalListProvider } from './GlobalListContext';
-import RecordingMenu from "./pages/RecordingMenu";
+
 
 
 

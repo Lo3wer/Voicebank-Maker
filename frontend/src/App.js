@@ -5,7 +5,6 @@ import Navigation from "./pages/Navigation";
 import Download from "./pages/Download";
 import React from "react";
 import RecordingMenu from "./pages/RecordingMenu";
-import img from "./images/note.png";
 import Home from "./pages/Home";
 
 function App() {
