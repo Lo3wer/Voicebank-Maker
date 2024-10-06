@@ -47,7 +47,7 @@ function recordingMenu() {
 
                 <ReactRecorder/>
             </div>
-            <a href={"https://www.mediafire.com/file/xc60ff0f73hv9cb/CZloid+VCCV+2015.rar"} className={"p-2 text-blue-50 underline"}>Examples sounds for download.</a>
+            <a href={"https://www.mediafire.com/file/xc60ff0f73hv9cb/CZloid+VCCV+2015.rar"} className={"p-2 text-blue-50 underline"}>Example sounds for download.</a>
         </div>
     )
 }
