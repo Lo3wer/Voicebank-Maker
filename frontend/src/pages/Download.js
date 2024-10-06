@@ -117,7 +117,7 @@ function Download() {
                 </div>
             </div>
             <button 
-                className="bg-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-200 transform transition hover:scale-105 duration-300"
+                className="bg-white text-gray-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-200 transform transition hover:scale-105 duration-300"
                 onClick={GET}
             >
                 Download Your File
