@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Layout from "./pages/Layout";
+import Test from "./pages/Test";
+import NoPage from "./pages/NoPage";
+import React from "react";
 function App() {
 
   return (
@@ -12,7 +17,7 @@ function App() {
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/Test.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -26,13 +31,16 @@ function App() {
     </div>
     */
 
-      <div className="flex flex-col justify-center align-middle items-center h-screen">
-          <header className="flex flex-col justify-center align-middle">
-              <h1 className="">
-                  text
-              </h1>
-          </header>
-
+      <div className="flex h-screen">
+          <BrowserRouter className="flex">
+              <Routes>
+                  <Route path="/" element={<Layout />}>
+                      <Route path="/app" element={<App />} />
+                      <Route path="/test" element={<Test />} />
+                      <Route path="/*" element={<NoPage />} />
+                  </Route>
+              </Routes>
+          </BrowserRouter>
       </div>
   )
 }
