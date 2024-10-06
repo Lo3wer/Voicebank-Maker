@@ -23,10 +23,16 @@ function ReactRecorder() {
         setAudioLink("");
     }
 
+    function nextHandle() {
+        setVoice(false);
+        console.log(audioLink); // DO SOMETHIGN WITH THE AUDIO LINK
+        setAudioLink("");
+    }
+
 
     return (
         <div className={'flex flex-col max-w-sm border py-4 px-6t mx-auto bg-blue-200 items-center p-2'}>
-            <h4 className={"text-[18px]"}>Sound: </h4>
+            <h4 className={"text-[18px]"}>Recorder </h4>
 
             <ReactMic className={"w-full mt-4 mb-3"}
                       record={voice}
@@ -35,19 +41,31 @@ function ReactRecorder() {
                       sampleRate={48000}
             />
 
-            <div className={""}>
-                {audioLink? <button onClick={clearHandle} className={""}>Clear</button>  : ''}
-            </div>
-            <div className={""}>
-            {!voice ?
-                    <button onClick={startHandle} className={""}>Start</button>
+            <div className={"p-1"}>
+                {!voice ?
+                    <button onClick={startHandle}
+                            className={"bg-white px-5 py-2.5 text-center rounded-full"}>Start</button>
                     :
-                    <button onClick={stopHandle} className={""}>Stop</button>
+                    <button onClick={stopHandle}
+                            className={"bg-gray-600 px-5 py-2.5 text-center rounded-full"}>Stop</button>
                 }
 
             </div>
-            <div className={"mt-4"}>
-                {audioLink? <audio controls src={audioLink} className={"mt-6"}/> : null}
+            <div className={"mt-0"}>
+                {audioLink ? <audio controls src={audioLink} className={"mt-6"}/>
+                    :
+                    <audio controls src={""} className={"mt-6 disabled:true"}/>}
+            </div>
+
+            <div className={"p-3 space-x-1"}>
+                {audioLink ? <button onClick={clearHandle}
+                                     className={"bg-red-600 px-5 py-2.5 text-center rounded-full"}>Clear</button> :
+                    <button onClick={clearHandle}
+                            className={"bg-red-300 px-5 py-2.5 text-center rounded-full disabled:true"}>Clear</button>}
+                {audioLink ? <button onClick={nextHandle}
+                                     className={"bg-green-700 px-5 py-2.5 text-center rounded-full"}>Next</button> :
+                    <button onClick={nextHandle}
+                            className={"bg-green-300 px-5 py-2.5 text-center rounded-full disabled:true"}>Next</button>}
             </div>
         </div>
     )
