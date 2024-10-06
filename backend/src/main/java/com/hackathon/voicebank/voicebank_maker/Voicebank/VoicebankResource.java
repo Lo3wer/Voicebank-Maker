@@ -25,7 +25,11 @@ public class VoicebankResource {
     //GET id of voicebank
     @GetMapping("/voicebanks/{id}")
     public Voicebank getVoicebank(@PathVariable int id) {
-        return service.getVoicebank(id);
+        Voicebank voicebank = service.getVoicebank(id);
+        if (voicebank == null) {
+            throw new UserNotFoundException("id:" + id);
+        }
+        return voicebank;
     }
 
     //POST /voicebanks
